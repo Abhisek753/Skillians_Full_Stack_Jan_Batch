@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Class 2</title>
+    <link rel="stylesheet" href="./index.css" >
+    <style>
+        /* span{
+            color: blue;
+        } */
+        /* .heading{
+            color: aqua;
+        } */
+         /* h2{
+            color: green;
+         } */
+          .container{
+            background-color: antiquewhite;
+          }
+          .container span{
+            color: green;
+          }
+          .btn:hover{
+            background-color: red;
+            color: white;
+          }
+          .textfield{
+            border: 2px solid rgb(255, 0, 242);
+          }
+          .textfield:focus{
+            border: 2ps solid blue;
+          }
+
+          .parent{
+            width: 200px;
+            height: 300px;
+            background-color: rgb(143, 100, 100);
+            border-left: 5px solid green;
+            padding: 20px;
+            margin: 10px;
+          }
+          .box{
+            background-color: aqua;
+          }
+    </style>
+</head>
+<body>
+    <p style="color: blueviolet; font-size: large;">Hello Skillians</p>
+    <span>This is my second css class</span>
+    <div class="container">
+        <h2 class="heading">Selectors in html element</h2>
+        <span>one</span>
+        <span>two</span>
+        <span>three</span>
+        <div>
+            <div>
+                <span>four</span>
+            </div>
+        </div>
+    </div>
+    <p class="btn">Click</p>
+    <input class="textfield" placeholder="Enter values"/>
+
+    <div class="parent">
+        <div class="box">
+            <p>First div</p>
+        </div>
+        <div class="box">
+            <p>
+                Second div
+            </p>
+        </div>
+    </div>
+      <div class="parent">
+        <div class="box">
+            <p>First div</p>
+        </div>
+        <div class="box">
+            <p>
+                Second div
+            </p>
+        </div>
+    </div>
+    <p style="background-color: teal;display: inline-block; height: 300px;">This is block element</p>
+    <span style="background-color: teal; display: block;">Span tag</span>
+
+    <div>
+        <div style="background-color: skyblue;z-index: 1;; height: 200px;width: 200px;position: absolute; top:100px">
+            First box
+        </div>
+        <div style="background-color: red;z-index: 10; height: 200px;width: 200px;position: absolute; top: 50px;">
+            Second box
+        </div>
+    </div>
+</body>
+</html>

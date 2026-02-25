@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    color: Blue;
+}
+a{
+    text-decoration: none;
+}
+.one:hover{
+    background-color: aquamarine;
+}
+.two:hover{
+    background-color: blueviolet;
+}
+#container{
+    background-color: gray;
+    padding: 40px;
+    margin: 5px;
+}
+#container2{
+    background-color: rgb(114, 79, 79);
+    padding: 40px 80px;
+    margin:10px 15px 20px 30px;
+}
+
+.parent{
+    border: 2px solid green;
+}
+.parent p{
+    color: rgb(219, 126, 13);
+}
+
+.parent >p{
+    background-color: bisque;
+}
+/* .parent~p{
+    border: 2px solid red;
+} */
+ .parent+p{
+    border: 2px solid red;
+}
+.round{
+    background-color: red;
+    height: 100px;
+    width:100px;
+    border-radius: 50%;
+}
+
+.parent-card{
+    border: 1px solid black;
+    width: 70%;
+    height: 400px;
+    display: flex;
+    padding: 2%;
+    justify-content: space-between;
+}
+
+.card{
+    width:30%;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.child-card{
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+}
+.child-card:nth-child(1){
+    height: 45%;
+}
+.child-card:nth-child(2){
+    height: 55%;
+}
+
+.card-content{
+    border: 1px solid green;
+}
+.card-content:nth-child(1){
+    height: 20%;
+}
+.card-content:nth-child(2){
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    font-size: smaller;
+
+}
+.card-content:nth-child(3){
+    height: 40%;
+}
+.card-content button{
+    background-color: skyblue;
+    color: white;
+    border-radius:30%;
+    border: none;
+    padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+
+}
+

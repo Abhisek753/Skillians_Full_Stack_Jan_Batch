@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+.navbar{
+    background-color: #4eacff;
+    color: #ffffff;
+    padding: 1.5% 5%;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+}
+.nav-left h2{
+ margin-bottom: 1%;
+
+}
+.nav-right{
+    display: grid;
+    grid-auto-flow: column;
+    text-align: center;
+    align-items: center;
+    gap: 12px;
+
+}

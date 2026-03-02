@@ -1,24 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog App</title>
     <link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
     <header class="navbar">
         <div class="nav-left">
             <h2 class="logo">TechWave</h2>
             <p>Frontend Tips, tools and tutorials</p>
         </div>
-         <nav class="nav-right" >
+        <input type="checkbox" id="hamburger-menu" class="hamburger-checkbox">
+        <label for="hamburger-menu" class="hamburger-icon"> &#9776;</label>
+        <nav class="nav-right">
             <a href="#home">Home</a>
             <a href="#feature">Feature</a>
             <a href="#tutorial">Tutorial</a>
             <a href="#gallery">Gallery</a>
-             <a href="#contact">Contact</a>
-         </nav>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
+    <!-- HOME SECTION -->
+    <section class="home">
+        <div class="home-container">
+            <div class="home-text">
+                <h2>Learn Frontend the Right Way</h2>
+                <p>
+                    TechWave helps you master HTML,CSS, JAVASCRIPT and modern frontend tools practical tutorials and
+                    real projects.
+                </p>
+                <a class="home-btn">Explore Tutorial</a>
+            </div>
+            <div class="home-image">
+                <img src="https://thumbs.dreamstime.com/b/artificial-intelligence-ai-research-robot-cyborg-development-future-people-living-digital-data-mining-machine-learning-171270756.jpg" alt="Tech Blog">
+            </div>
+        </div>
+
+    </section>
+     <!-- TUTORIAL SECTION -->
+    <section class="tutorials">
+        <h2 class="section-title">Latest Tutorials</h2>
+        <div class="tutorial-container">
+          <div class="tutorial-card">
+            <img src="https://www.technicalmickey.com/wp-content/uploads/2024/12/html-tutorial.webp" alt="HTML CSS">
+            <div class="card-content">
+                <h3>HTML & CSS Basics</h3>
+                <p>
+                    An HTML CSS tutorial is a learning resource that explains how to use the two core languages of web development, HTML  to build and style web pages
+                </p>
+            </div>
+          </div>
+           <div class="tutorial-card">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240701150350/JavaScript-Tutorial-copy.webp" alt="HTML CSS">
+            <div class="card-content">
+                <h3>JAVASCRIPT Basics</h3>
+                <p>
+                    A JavaScript (JS) tutorial is a guided learning resource designed to teach JavaScript, the lightweight, interpreted, and compiled programming language used to create interactive, dynamic content on websites.
+                </p>
+            </div>
+          </div>
+           <div class="tutorial-card">
+            <img src="https://lh7-us.googleusercontent.com/D6BrXu23nOJepuMbM-ZSNza1nfl8qLh1PtaGzyYUebo6llBebhDTSKODso4N6JZsFMXuwxSRga2pIqidn6rPkjHJTNd7opp-5HYY87OOFXqiC0nGCcHHenuytpXoG5u4jHzD4MVPdfgW0QvUijKh5q8" alt="HTML CSS">
+            <div class="card-content">
+                <h3>REACT Basics</h3>
+                <p>
+                    React is a popular open-source JavaScript library developed by Meta (Facebook) for building fast, interactive, and component-based user interfaces for single-page web applications. 
+                </p>
+            </div>
+          </div>
+           <div class="tutorial-card">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230331172641/NodeJS-copy.webp" alt="HTML CSS">
+            <div class="card-content">
+                <h3>Backend Fundamentals</h3>
+                <p>
+                   Node.js is an open-source, cross-platform JavaScript runtime environment built on Chrome's V8 engine that allows developers to run code on the server side.
+                </p>
+            </div>
+          </div>
+        </div>
+     
+    </section>
+
 </body>
+
 </html>

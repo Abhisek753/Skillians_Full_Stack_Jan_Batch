@@ -1,39 +1,218 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: aliceblue;
 
 }
-a{
+
+a {
     text-decoration: none;
     color: white;
 }
-a:hover{
+
+a:hover {
     text-decoration: underline;
     color: black;
 }
 
-.navbar{
+.navbar {
     background-color: #4eacff;
     color: #ffffff;
     padding: 1.5% 5%;
     display: grid;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    position: relative;
 }
-.nav-left h2{
- margin-bottom: 1%;
+
+.nav-left h2 {
+    margin-bottom: 1%;
 
 }
-.nav-right{
+
+.nav-right {
     display: grid;
     grid-auto-flow: column;
     text-align: center;
     align-items: center;
     gap: 12px;
 
+}
+
+.hamburger-checkbox {
+    display: none;
+}
+
+.hamburger-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    background: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* HOME SECTION START */
+.home {
+    padding: 60px 5%;
+    background-color: aliceblue;
+}
+
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.home-text h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.home-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.home-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #4eacff;
+    border-radius: 5px;
+}
+
+.home-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* HOME SECTION END */
+
+/* Tutorial section start */
+.tutorials {
+    padding: 60px 5%;
+    background-color: azure;
+
+}
+
+.section-title {
+    margin-bottom: 40px;
+}
+
+.tutorial-container {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.tutorial-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.tutorial-card img {
+    width: 100%;
+    height: 180px;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin-bottom: 18px;
+}
+
+.card-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Tutorial section end */
+
+@media (max-width:768px) {
+    .logo {
+        font-size: larger;
+    }
+
+    .nav-left p {
+        font-size: small;
+    }
+
+    .navbar {
+        grid-template-columns: 1fr auto;
+
+    }
+
+    .hamburger-icon {
+        display: block;
+        z-index: 1001;
+    }
+
+    .nav-right {
+        position: absolute;
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+        top: 100%;
+        left: 0;
+        text-align: left;
+        width: 100%;
+        background-color: #4eacff;
+        padding: 15px 10px;
+        display: none;
+    }
+
+    .hamburger-checkbox:checked~.nav-right {
+        display: grid;
+    }
+
+    /* HOME SECTION START */
+    .home-text {
+        font-size: 24px;
+    }
+
+    /* HOME SECTION END */
+
+    /* Tutorial section start */
+
+    .tutorial-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    /* Tutorial section end */
+}
+
+@media (max-width:480px) {
+
+    .home-container {
+        grid-template-columns: 1fr;
+    }
+
+    .home-image {
+        order: -1;
+    }
+
+    .tutorial-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
 }

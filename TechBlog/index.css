@@ -141,7 +141,70 @@ a:hover {
 }
 
 /* Tutorial section end */
+/* Gallery section start */
+.gallery{
+    padding: 60px 5%;
+    background-color: #ffffff;
+}
+.gallery-container{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(6,1fr);
+}
+.gallery-container img{
+    width: 100%;
+    height: 160px;
+    border-radius: 8px;
+}
 
+
+
+/* Gallery section end */
+
+/* css for footer */
+.footer{
+    background-color: #a6a1a1f2;
+    color: #ffffff;
+    padding: 40px 5% 20px;
+}
+.footer-container{
+    display: grid;
+  
+    grid-template-columns: repeat(4,1fr);
+}
+.footer-col h3{
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #4eacff;
+}
+.footer-col p{
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+.footer-col ul{
+    list-style: none;
+}
+.footer-col ul li{
+    margin-bottom: 8px;
+}
+.footer-col ul li a{
+   font-size: 14px;
+  color: #d1d5db;
+}
+.footer-col ul li a:hover{
+   font-size: 14px;
+  color: #4eacff;
+}
+.footer-bottom{
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid gray;
+    font-size: 13px;
+    color: #5a5b5e;
+    padding-top: 15px;
+}
 @media (max-width:768px) {
     .logo {
         font-size: larger;
@@ -196,6 +259,11 @@ a:hover {
     }
 
     /* Tutorial section end */
+    /* Gallery section start */
+    .gallery-container{
+        grid-template-columns: repeat(4,1fr);
+    }
+    /* Gallery section end */
 }
 
 @media (max-width:480px) {
@@ -215,4 +283,8 @@ a:hover {
     .section-title {
         font-size: 22px;
     }
+      .gallery-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    /* Gallery section end */
 }

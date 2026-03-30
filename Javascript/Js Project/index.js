@@ -1,6 +1,48 @@
-
+const carousalImages=["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR9gHxWXNMUr3lMJr4W8rWpVh6vwyjriJ6bQ&s","https://assets.mubicdn.net/images/notebook/post_images/19720/images-w1400.jpg?1445431100","https://i.pinimg.com/736x/fb/55/dc/fb55dc632b7a7ffbabf104b1208b27fc.jpg"]
 
 let allMovies=[];
+let currentSlide=0;
+
+const carousalContainer=document.getElementById("carousal-container");
+
+function initCarousal(){
+    carousalContainer.innerHTML="";
+    carousalImages.forEach((imageUrl,index)=>{
+        const slide=document.createElement("div");
+        slide.className="carousal-slide";
+         if(index==0){
+            slide.classList.add("active");
+         }
+        console.log(imageUrl)
+         const img=document.createElement("img");
+         img.className="carousal-image";
+         img.src=imageUrl;
+         img.alt=`${index+1}`
+         slide.appendChild(img)
+         carousalContainer.appendChild(slide);
+    })
+}
+
+function updateCarousal(){
+    const slides=document.querySelectorAll(".carousal-slide");
+    slides.forEach((slide,index)=>{
+        if(index===currentSlide){
+            slide.classList.add("active");
+        }else{
+            slide.classList.remove("active");
+        }
+    })
+}
+function autoNext(){
+    currentSlide=(currentSlide+1)%carousalImages.length;
+    updateCarousal()
+}
+
+function changeSlide(direction){
+      currentSlide=(currentSlide+direction+carousalImages.length)%carousalImages.length;
+      updateCarousal()
+}
+
 
 const movieContainer=document.getElementById("movies-container");
 
@@ -13,6 +55,16 @@ async function getMoviesData(){
         console.log(err)
     }
 }
+
+
+const searchInput=document.getElementById("search-input");
+searchInput.addEventListener("input",()=>{
+    const searchValue=searchInput.value;
+    const filterValue=allMovies.filter(movie=>
+        movie.title.toLowerCase().includes(searchValue.toLowerCase()));
+   
+    displayMovies(filterValue);
+})
 
 async function handleCart(movie){
     console.log(movie)
@@ -69,15 +121,6 @@ try{
  }
 
 
-
-
-
-
-
-getMoviesData()
-
-
-
 const loggedInUser=JSON.parse(localStorage.getItem("loggedInUser"));
 
 const authSection=document.getElementById("auth-section");
@@ -90,3 +133,8 @@ function Logout(){
     localStorage.removeItem("loggedInUser");
     location.reload();
 }
+
+
+getMoviesData()
+initCarousal();
+setInterval(autoNext,4000);

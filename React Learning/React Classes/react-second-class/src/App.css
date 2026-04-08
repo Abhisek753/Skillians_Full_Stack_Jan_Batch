@@ -1,0 +1,49 @@
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+}
+
+.counter-box{
+    background-color: white;
+    padding: 40px;
+    text-align: center;
+    width: 300px;
+    border-radius: 40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.title{
+    margin-bottom: 20px;
+    color: black;
+}
+.count{
+    font-size: 48px;
+    color: blue;
+    margin-bottom: 30px;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.buttons button{
+    padding: 10px 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.buttons :nth-child(1){
+    background-color: green;
+
+}
+.buttons :nth-child(2){
+    background-color: rgb(131, 119, 11);
+
+}
+.buttons :nth-child(3){
+    background-color: red;
+
+}

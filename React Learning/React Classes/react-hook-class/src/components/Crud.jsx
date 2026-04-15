@@ -7,7 +7,9 @@ const Crud = () => {
     number: "",
     active: "",
   });
+
   const [users, setUsers] = useState([]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({
@@ -25,9 +27,15 @@ const Crud = () => {
       active: "",
     });
   };
-  console.log(users);
+
+  const handleDelete = (index) => {
+    const filterData = users.filter((el, i) => {
+      return i != index;
+    });
+    setUsers(filterData);
+  };
   return (
-    <div className="min-h-screen bg-gray-200 justify-center items-start pt-10">
+    <div className="min-h-screen bg-gray-200 justify-center items-start pt-10 width-full gap-8 flex">
       <div className="bg-white p-6 rounded shadow w-[600px]">
         <h2 className="text-2xl text-center font-bold mb-4">Crud App</h2>
         <div className="grid gap-4 grid-cols-2">
@@ -74,35 +82,33 @@ const Crud = () => {
         </div>
       </div>
       <div>
-         <table class="table-fixed">
-            <thead>
+        <table className="table-fixed">
+          <thead>
+            <tr>
+              <th className="border p-2">Name</th>
+              <th className="border p-2">Email</th>
+              <th className="border p-2">Number</th>
+              <th className="border p-2">Status</th>
+              <th className="border p-2">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((e, i) => (
               <tr>
-                <th className="border p-2">Name</th>
-                <th className="border p-2">Email</th>
-                <th className="border p-2">Number</th>
-                <th className="border p-2">Status</th>
-                  <th className="border p-2">Action</th>
-
+                <td className="border p-2">{e.name}</td>
+                <td className="border p-2">{e.email} </td>
+                <td className="border p-2">{e.number}</td>
+                <td className="border p-2">{e.active}</td>
+                <td
+                  className="border p-2 bg-red-500 text-white"
+                  onClick={() => handleDelete(i)}
+                >
+                  Delete
+                </td>
               </tr>
-            </thead>
-                <tbody>
-        {users.map((e) => (
-         
-        
-              <tr>
-                <td>{e.name}</td>
-                <td>{e.email} </td>
-                <td>{e.number}</td>
-                <td>{e.active}</td>
-                <td >Delete</td>
-
-              </tr>
-             
-       
-        
-        ))}
-             </tbody>
-          </table>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

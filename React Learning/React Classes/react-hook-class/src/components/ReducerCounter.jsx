@@ -13,7 +13,6 @@ const counterReducer=(state,action)=>{
     }
 }
 
-
 const ReducerCounter = () => {
 const [count,dispatch]=useReducer(counterReducer,0)
 
@@ -47,5 +46,5 @@ const [count,dispatch]=useReducer(counterReducer,0)
     </div>
   )
 }
-
+//9:10
 export default ReducerCounter

@@ -4,6 +4,8 @@ import Home from './components/Home'
 import { Link, Route, Routes } from 'react-router-dom'
 import About from './components/About'
 import Contact from './components/Contact'
+import User from './components/User'
+import SingleUser from './components/SingleUser'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,13 +16,16 @@ function App() {
         <nav>
         <Link to='/'>Home</Link><br/>
         <Link to='/about'>About</Link><br/>
-        <Link to='/contact'>Contact</Link>
+        <Link to='/contact'>Contact</Link><br/>
+         <Link to='/user'>User</Link>
       </nav>
     
       <Routes>
          <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
            <Route path='/contact' element={<Contact/>}/>
+            <Route path='/user' element={<User/>}/>
+             <Route path='/user/:id' element={<SingleUser/>}/>
       </Routes>
   
      </div>

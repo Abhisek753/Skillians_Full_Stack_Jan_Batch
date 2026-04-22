@@ -6,10 +6,11 @@ import About from './components/About'
 import Contact from './components/Contact'
 import User from './components/User'
 import SingleUser from './components/SingleUser'
+import PrivateRoute from './routes/PrivateRoute'
 
 function App() {
   const [count, setCount] = useState(0)
-
+const isLogin=false;
   return (
     <>
     <div>
@@ -24,7 +25,7 @@ function App() {
          <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
            <Route path='/contact' element={<Contact/>}/>
-            <Route path='/user' element={<User/>}/>
+            <Route path='/user' element={<PrivateRoute isLogin={isLogin}><User/></PrivateRoute>}/>
              <Route path='/user/:id' element={<SingleUser/>}/>
       </Routes>
   

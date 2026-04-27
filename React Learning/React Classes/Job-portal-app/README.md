@@ -1,0 +1,1 @@
+npm install axiox react-router-dom react-icons eact-responsive-carousel react-select react-toastify

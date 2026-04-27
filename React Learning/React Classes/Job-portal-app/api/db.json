@@ -1,0 +1,422 @@
+{
+  "jobs": [
+    {
+      "id": "1",
+      "title": "Senior React Developer",
+      "company": "TechCorp Solutions",
+      "companyId": 1,
+      "companyLogo": "https://via.placeholder.com/150/3B82F6/FFFFFF?text=TC",
+      "location": "Bangalore, India",
+      "type": "Full-time",
+      "workMode": "Hybrid",
+      "experience": "Senior Level",
+      "salaryMin": 1500000,
+      "salaryMax": 2500000,
+      "category": "Technology",
+      "description": "We are looking for an experienced React Developer to join our growing team. You will be responsible for developing and implementing user interface components using React.js concepts and workflows such as Redux, Flux, and Webpack.",
+      "requirements": [
+        "Bachelor's degree in Computer Science or related field",
+        "5+ years of experience with React.js",
+        "Strong proficiency in JavaScript, including DOM manipulation",
+        "Experience with popular React.js workflows (Redux, Flux)",
+        "Familiarity with RESTful APIs",
+        "Knowledge of modern authorization mechanisms"
+      ],
+      "responsibilities": [
+        "Develop new user-facing features using React.js",
+        "Build reusable components and front-end libraries",
+        "Translate designs and wireframes into high-quality code",
+        "Optimize components for maximum performance",
+        "Collaborate with team members and stakeholders"
+      ],
+      "skills": [
+        "React",
+        "JavaScript",
+        "Redux",
+        "HTML",
+        "CSS",
+        "Webpack",
+        "REST API"
+      ],
+      "companyDescription": "TechCorp Solutions is a leading technology company specializing in web and mobile application development.",
+      "companySize": "200-500",
+      "postedDate": "2026-04-15T10:00:00Z",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "title": "Full Stack Developer",
+      "company": "StartupHub",
+      "companyId": 2,
+      "companyLogo": "https://via.placeholder.com/150/10B981/FFFFFF?text=SH",
+      "location": "Mumbai, India",
+      "type": "Full-time",
+      "workMode": "Remote",
+      "experience": "Mid Level",
+      "salaryMin": 1000000,
+      "salaryMax": 1800000,
+      "category": "Technology",
+      "description": "Join our innovative startup as a Full Stack Developer. Work on cutting-edge projects and help build scalable applications.",
+      "requirements": [
+        "3+ years of full stack development experience",
+        "Proficiency in Node.js and React",
+        "Experience with MongoDB and PostgreSQL",
+        "Understanding of cloud platforms (AWS/Azure)",
+        "Strong problem-solving skills"
+      ],
+      "responsibilities": [
+        "Design and develop REST APIs",
+        "Build responsive user interfaces",
+        "Implement database schemas",
+        "Deploy and maintain applications",
+        "Write unit and integration tests"
+      ],
+      "skills": [
+        "Node.js",
+        "React",
+        "MongoDB",
+        "Express",
+        "AWS",
+        "Docker"
+      ],
+      "companyDescription": "StartupHub is a fast-growing startup incubator helping innovative ideas come to life.",
+      "companySize": "50-100",
+      "postedDate": "2026-04-20T08:30:00Z",
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "title": "UI/UX Designer",
+      "company": "DesignWorks",
+      "companyId": 3,
+      "companyLogo": "https://via.placeholder.com/150/F59E0B/FFFFFF?text=DW",
+      "location": "Pune, India",
+      "type": "Full-time",
+      "workMode": "On-site",
+      "experience": "Mid Level",
+      "salaryMin": 800000,
+      "salaryMax": 1400000,
+      "category": "Design",
+      "description": "We're seeking a talented UI/UX Designer to create amazing user experiences for our digital products.",
+      "requirements": [
+        "3+ years of UI/UX design experience",
+        "Proficiency in Figma and Adobe XD",
+        "Strong portfolio showcasing design work",
+        "Understanding of design systems",
+        "Knowledge of user research methods"
+      ],
+      "responsibilities": [
+        "Create wireframes and prototypes",
+        "Design user interfaces for web and mobile",
+        "Conduct user research and testing",
+        "Collaborate with developers",
+        "Maintain design systems"
+      ],
+      "skills": [
+        "Figma",
+        "Adobe XD",
+        "Sketch",
+        "Prototyping",
+        "User Research",
+        "Design Systems"
+      ],
+      "companyDescription": "DesignWorks is a creative agency specializing in digital product design and branding.",
+      "companySize": "30-50",
+      "postedDate": "2026-04-18T14:00:00Z",
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "title": "DevOps Engineer",
+      "company": "CloudTech",
+      "companyId": 4,
+      "companyLogo": "https://via.placeholder.com/150/8B5CF6/FFFFFF?text=CT",
+      "location": "Hyderabad, India",
+      "type": "Full-time",
+      "workMode": "Hybrid",
+      "experience": "Senior Level",
+      "salaryMin": 1800000,
+      "salaryMax": 2800000,
+      "category": "Technology",
+      "description": "Looking for an experienced DevOps Engineer to streamline our development and deployment processes.",
+      "requirements": [
+        "5+ years of DevOps experience",
+        "Strong knowledge of AWS/Azure/GCP",
+        "Experience with Kubernetes and Docker",
+        "Proficiency in CI/CD tools",
+        "Scripting skills (Python, Bash)"
+      ],
+      "responsibilities": [
+        "Design and implement CI/CD pipelines",
+        "Manage cloud infrastructure",
+        "Automate deployment processes",
+        "Monitor system performance",
+        "Ensure security best practices"
+      ],
+      "skills": [
+        "AWS",
+        "Kubernetes",
+        "Docker",
+        "Jenkins",
+        "Terraform",
+        "Python"
+      ],
+      "companyDescription": "CloudTech provides cloud infrastructure and DevOps solutions to enterprises.",
+      "companySize": "100-200",
+      "postedDate": "2026-04-22T09:15:00Z",
+      "status": "active"
+    },
+    {
+      "id": "5",
+      "title": "Digital Marketing Manager",
+      "company": "MarketPro",
+      "companyId": 5,
+      "companyLogo": "https://via.placeholder.com/150/EF4444/FFFFFF?text=MP",
+      "location": "Delhi, India",
+      "type": "Full-time",
+      "workMode": "On-site",
+      "experience": "Mid Level",
+      "salaryMin": 900000,
+      "salaryMax": 1500000,
+      "category": "Marketing",
+      "description": "Join our marketing team to lead digital marketing campaigns and drive business growth.",
+      "requirements": [
+        "4+ years of digital marketing experience",
+        "Expertise in SEO and SEM",
+        "Experience with Google Analytics and Ads",
+        "Strong content marketing skills",
+        "Social media marketing knowledge"
+      ],
+      "responsibilities": [
+        "Develop digital marketing strategies",
+        "Manage SEO/SEM campaigns",
+        "Analyze marketing metrics",
+        "Create content marketing plans",
+        "Manage social media presence"
+      ],
+      "skills": [
+        "SEO",
+        "SEM",
+        "Google Analytics",
+        "Content Marketing",
+        "Social Media",
+        "Email Marketing"
+      ],
+      "companyDescription": "MarketPro is a digital marketing agency helping brands grow their online presence.",
+      "companySize": "50-100",
+      "postedDate": "2026-04-25T11:30:00Z",
+      "status": "active"
+    },
+    {
+      "id": "6",
+      "title": "Data Scientist",
+      "company": "DataVision",
+      "companyId": 6,
+      "companyLogo": "https://via.placeholder.com/150/06B6D4/FFFFFF?text=DV",
+      "location": "Bangalore, India",
+      "type": "Full-time",
+      "workMode": "Remote",
+      "experience": "Senior Level",
+      "salaryMin": 2000000,
+      "salaryMax": 3500000,
+      "category": "Technology",
+      "description": "Seeking a Data Scientist to work on machine learning projects and extract insights from large datasets.",
+      "requirements": [
+        "Master's degree in Computer Science or Statistics",
+        "5+ years of data science experience",
+        "Strong Python and R skills",
+        "Experience with ML frameworks (TensorFlow, PyTorch)",
+        "Knowledge of statistical analysis"
+      ],
+      "responsibilities": [
+        "Build and deploy ML models",
+        "Analyze large datasets",
+        "Create data visualizations",
+        "Collaborate with engineering teams",
+        "Present insights to stakeholders"
+      ],
+      "skills": [
+        "Python",
+        "R",
+        "TensorFlow",
+        "PyTorch",
+        "SQL",
+        "Machine Learning",
+        "Statistics"
+      ],
+      "companyDescription": "DataVision specializes in AI and machine learning solutions for businesses.",
+      "companySize": "150-300",
+      "postedDate": "2026-04-23T10:45:00Z",
+      "status": "active"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "TechCorp Solutions",
+      "logo": "https://via.placeholder.com/150/3B82F6/FFFFFF?text=TC",
+      "description": "Leading technology company specializing in web and mobile application development.",
+      "size": "200-500",
+      "industry": "Technology",
+      "website": "https://techcorp.example.com"
+    },
+    {
+      "id": "2",
+      "name": "StartupHub",
+      "logo": "https://via.placeholder.com/150/10B981/FFFFFF?text=SH",
+      "description": "Fast-growing startup incubator helping innovative ideas come to life.",
+      "size": "50-100",
+      "industry": "Technology",
+      "website": "https://startuphub.example.com"
+    },
+    {
+      "id": "3",
+      "name": "DesignWorks",
+      "logo": "https://via.placeholder.com/150/F59E0B/FFFFFF?text=DW",
+      "description": "Creative agency specializing in digital product design and branding.",
+      "size": "30-50",
+      "industry": "Design",
+      "website": "https://designworks.example.com"
+    },
+    {
+      "id": "4",
+      "name": "CloudTech",
+      "logo": "https://via.placeholder.com/150/8B5CF6/FFFFFF?text=CT",
+      "description": "Cloud infrastructure and DevOps solutions provider.",
+      "size": "100-200",
+      "industry": "Technology",
+      "website": "https://cloudtech.example.com"
+    },
+    {
+      "id": "5",
+      "name": "MarketPro",
+      "logo": "https://via.placeholder.com/150/EF4444/FFFFFF?text=MP",
+      "description": "Digital marketing agency helping brands grow their online presence.",
+      "size": "50-100",
+      "industry": "Marketing",
+      "website": "https://marketpro.example.com"
+    },
+    {
+      "id": "6",
+      "name": "DataVision",
+      "logo": "https://via.placeholder.com/150/06B6D4/FFFFFF?text=DV",
+      "description": "AI and machine learning solutions provider.",
+      "size": "150-300",
+      "industry": "Technology",
+      "website": "https://datavision.example.com"
+    }
+  ],
+  "applications": [
+    {
+      "id": "1",
+      "jobId": 1,
+      "jobTitle": "Senior React Developer",
+      "company": "TechCorp Solutions",
+      "userId": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+91 98765 43210",
+      "resume": "https://example.com/resume.pdf",
+      "coverLetter": "I am very interested in this position and believe my skills match perfectly...",
+      "appliedDate": "2026-04-16T09:00:00Z",
+      "status": "pending"
+    },
+    {
+      "id": "7604",
+      "name": "Abhisek Kumar",
+      "email": "abhisekkumartechnoforte@gmail.com",
+      "phone": "9898809809",
+      "resume": "https://priorityfulfillment.com/industries/",
+      "coverLetter": "test",
+      "jobId": "1",
+      "jobTitle": "Senior React Developer",
+      "company": "TechCorp Solutions",
+      "appliedDate": "2026-04-27T13:26:42.686Z",
+      "status": "pending"
+    },
+    {
+      "id": "d499",
+      "name": "Abhisek Kumar",
+      "email": "ak@gmail.com",
+      "phone": "9898809809",
+      "resume": "https://priorityfulfillment.com/industries/",
+      "coverLetter": "test 2",
+      "jobId": "3",
+      "jobTitle": "UI/UX Designer",
+      "company": "DesignWorks",
+      "appliedDate": "2026-04-27T13:28:10.217Z",
+      "status": "pending"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Technology",
+      "icon": "💻",
+      "jobCount": 245
+    },
+    {
+      "id": "2",
+      "name": "Marketing",
+      "icon": "📢",
+      "jobCount": 123
+    },
+    {
+      "id": "3",
+      "name": "Design",
+      "icon": "🎨",
+      "jobCount": 87
+    },
+    {
+      "id": "4",
+      "name": "Sales",
+      "icon": "💼",
+      "jobCount": 156
+    },
+    {
+      "id": "5",
+      "name": "Finance",
+      "icon": "💰",
+      "jobCount": 94
+    },
+    {
+      "id": "6",
+      "name": "Healthcare",
+      "icon": "🏥",
+      "jobCount": 67
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "user@example.com",
+      "password": "password123",
+      "role": "jobseeker",
+      "phone": "+91 98765 43210",
+      "createdAt": "2026-04-01T10:00:00Z",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "name": "TechCorp Solutions",
+      "email": "company@example.com",
+      "password": "password123",
+      "role": "company",
+      "phone": "+91 98765 12345",
+      "companyName": "TechCorp Solutions",
+      "createdAt": "2026-04-01T10:00:00Z",
+      "status": "active"
+    },
+    {
+      "id": "ca96",
+      "name": "Abhisek Kumar",
+      "email": "abhisekkumartechnoforte@gmail.com",
+      "password": "123456",
+      "role": "jobseeker",
+      "phone": "9898809809",
+      "createdAt": "2026-04-27T13:32:10.328Z",
+      "status": "active"
+    }
+  ]
+}

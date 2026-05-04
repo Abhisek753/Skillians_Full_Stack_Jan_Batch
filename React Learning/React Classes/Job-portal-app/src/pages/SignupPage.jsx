@@ -15,7 +15,7 @@ const SignupPage = () => {
   });
 
   const handleChange = (e) => {
-    console.log(e.target.name, e.target.value);
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -44,7 +44,7 @@ const SignupPage = () => {
       const user = await signup(userData);
       if(user){
         console.log(user)
-        toast.success("🦄 Wow so easy!", {
+        toast.success("User Created", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,

@@ -505,6 +505,17 @@
       "number": "9733905029",
       "createdAt": "2026-04-29T16:27:08.686Z",
       "status": "active"
+    },
+    {
+      "id": "0f7d",
+      "name": "Kaushik",
+      "email": "ka@gmail.com",
+      "password": "123456",
+      "role": "Admin",
+      "company": "Skillians",
+      "number": "8988989789",
+      "createdAt": "2026-05-04T14:22:25.616Z",
+      "status": "active"
     }
   ]
 }

@@ -433,7 +433,7 @@
       "id": "cae5",
       "name": "ABHISEK KUMAR",
       "email": "kumarabhisek753@gmail.com",
-      "password": "876886",
+      "password": "123456",
       "role": "Admin",
       "company": "Techinfo 2",
       "number": "5589579348759",
@@ -462,50 +462,7 @@
       "createdAt": "2026-04-29T16:23:25.908Z",
       "status": "active"
     },
-    {
-      "id": "9a4c",
-      "name": "ABHISEK KUMAR",
-      "email": "kumarabhisek753@gmail.com",
-      "password": "1234567",
-      "role": "",
-      "company": "",
-      "number": "",
-      "createdAt": "2026-04-29T16:24:10.796Z",
-      "status": "active"
-    },
-    {
-      "id": "ee75",
-      "name": "",
-      "email": "",
-      "password": "1234567",
-      "role": "",
-      "company": "",
-      "number": "9733905029",
-      "createdAt": "2026-04-29T16:25:10.223Z",
-      "status": "active"
-    },
-    {
-      "id": "e156",
-      "name": "ABHISEK KUMAR",
-      "email": "kumarabhisek753@gmail.com",
-      "password": "1234567",
-      "role": "",
-      "company": "",
-      "number": "",
-      "createdAt": "2026-04-29T16:26:10.295Z",
-      "status": "active"
-    },
-    {
-      "id": "1c17",
-      "name": "ABHISEK KUMAR",
-      "email": "kumarabhisek753@gmail.com",
-      "password": "123456y",
-      "role": "Admin",
-      "company": "Techinfo",
-      "number": "9733905029",
-      "createdAt": "2026-04-29T16:27:08.686Z",
-      "status": "active"
-    },
+    
     {
       "id": "0f7d",
       "name": "Kaushik",

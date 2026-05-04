@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { signup } from "../services/authService";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -126,6 +126,9 @@ const SignupPage = () => {
               type="text"
             />
             <input name="" type="submit" className="bg-blue-600 text-white" />
+              <p className='text-center text-sm'>Go to Login Page {" "}
+              <Link to={"/login"} className="text-blue-600 cursor-pointer">Login</Link>
+            </p>
           </form>
         </div>
       </div>

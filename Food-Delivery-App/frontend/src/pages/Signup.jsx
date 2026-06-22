@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { signupUser } from '../services/authapi';
+import {toast} from "react-toastify";
 
 const Signup = () => {
 const [formData,setFormData]=useState({
@@ -12,10 +14,16 @@ const [formData,setFormData]=useState({
        setFormData({...formData,[event.target.name]:event.target.value})
     }
 
-    const handleSubmit=(event)=>{
+    const handleSubmit=async(event)=>{
      event.preventDefault()
-
-    //  call api and save data http://localhost:5000/api/auth/signup
+   
+    try{
+      const data=await signupUser("auth/signup",formData);
+      toast.success("Signup successfully");
+      }catch(err){
+      toast.error("Signup failed")
+     
+    }
     }
   return (
     <section className='rounded bg-white shadow-md w-[40%] m-auto p-8'>

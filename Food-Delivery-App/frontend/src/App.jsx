@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Home from './pages/Home'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
            <Route path="/" element={<Home/>}/>
       </Routes>
     </main>
+      <ToastContainer position="top-right" />
     </div>
     </>
   )

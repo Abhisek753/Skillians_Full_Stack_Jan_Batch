@@ -1,5 +1,5 @@
 const express=require("express");
-var cors = require('cors')
+var cors = require('cors');
 const dotenv=require("dotenv");
 const authRoutes=require("./routes/authRoutes")
 dotenv.config();
@@ -16,4 +16,4 @@ app.use("/api/auth",authRoutes);
 connectDB()
 app.listen(PORT,()=>{
     console.log(`Server is running at port ${PORT}`)
-})
+});

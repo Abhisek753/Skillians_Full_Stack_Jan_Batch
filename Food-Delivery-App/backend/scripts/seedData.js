@@ -87,7 +87,7 @@ console.log("1111111");
     //     price: 199,
     //     restaurantId: restaurants[2]._id,
     //     image: 'https://images.unsplash.com/photo-1568901349315-1c692d945a2a?w=400',
-    //     description: 'Beef patty with lettuce, tomato, and special sauce.',
+    //     description: 'chicken patty with lettuce, tomato, and special sauce.',
     //   },
     //   {
     //     name: 'Cheese Fries',

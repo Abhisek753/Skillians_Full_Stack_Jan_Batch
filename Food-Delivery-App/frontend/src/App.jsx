@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Home from './pages/Home'
 import { ToastContainer } from 'react-toastify'
+import RestuarantDetails from './pages/RestuarantDetails'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
     
     <main className='px-4 py-8 mx-auto'>
       <Routes>
+        <Route path="/restuarants/:id" element={<RestuarantDetails/>} />
            <Route path="/signup" element={<Signup/>}/>
            <Route path="/login" element={<Login/>}/>
            <Route path="/" element={<Home/>}/>

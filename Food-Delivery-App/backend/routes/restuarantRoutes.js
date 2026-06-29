@@ -1,5 +1,5 @@
 const express=require("express");
-const { getRestuarant, createRestuarant } = require("../controllers/restuarantController");
+const { getRestuarant, createRestuarant, getRestuarantById } = require("../controllers/restuarantController");
 const router=express.Router();
 
 router.get("/",getRestuarant);
@@ -10,9 +10,7 @@ router.post("/",createRestuarant);
 router.get("/my",()=>{
 
 });
-router.put("/:id",()=>{
-    
-});
+router.get("/:id",getRestuarantById);
 router.delete("/:id",()=>{
     
 });

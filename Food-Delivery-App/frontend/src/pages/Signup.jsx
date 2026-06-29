@@ -21,7 +21,7 @@ const [formData,setFormData]=useState({
       const data=await signupUser("auth/signup",formData);
       toast.success("Signup successfully");
       }catch(err){
-      toast.error("Signup failed")
+      toast.error("Signup failed");
      
     }
     }

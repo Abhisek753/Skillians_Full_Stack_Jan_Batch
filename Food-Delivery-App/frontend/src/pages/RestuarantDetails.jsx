@@ -1,22 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom'
 import { getRestuarant, getRestuarantById } from '../services/restuarantapi';
+import AuthContext from '../contexts/AuthContext';
+import { getFoods } from '../services/foodsapi';
+import FoodCard from '../components/FoodCard';
+
 
 const RestuarantDetails = () => {
     const {id}=useParams();
     const [restuarant,setRestuarant]=useState(null);
     const [foods,setFoods]=useState(null);
-
+    const {token}=useContext(AuthContext);
+  
    useEffect(()=>{
-    const fetchData=async()=>{
+   const fetchData=async()=>{
         try{
+         
             const restuarantData= await getRestuarantById(`restuarant/${id}`);
-            console.log(restuarantData)
-            // const foodData= await getRestuarant("foods");
+            const foodData= await getFoods(`foods?restuarantId=${id}`);
+                 
                   setRestuarant(restuarantData);
-                //   setFoods(foodData);
+                  setFoods(foodData);
         }catch(err){
              console.log(err);
         }
@@ -35,8 +41,19 @@ const RestuarantDetails = () => {
                 <p>{restuarant?.address}</p>
                  <p>{restuarant?.description}</p>
             </div>
-         
-         </div>
+            <h2>Menu</h2>
+            {foods?.length>0==0?(
+                <p>No foods available</p>
+            ):( 
+              <div className='grid gap-2 sm:grid-cols-2 md:grid-cols-3'>
+                {foods?.map((food)=>(
+                    <FoodCard key={food._id} food={food}/>
+                ))}
+              </div>
+            )}
+        
+
+        </div>
     </section>
   )
 }

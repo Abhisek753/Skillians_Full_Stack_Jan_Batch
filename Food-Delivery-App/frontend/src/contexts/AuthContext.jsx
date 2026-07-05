@@ -12,7 +12,7 @@ useEffect(()=>{
     const savedToken=localStorage.getItem("foodiehubToken");
     if(savedUser&&savedToken){
         setUser(JSON.parse(savedUser));
-        setToken(JSON.parse(savedToken));
+        setToken(savedToken);
     }
 },[])
 
@@ -21,7 +21,7 @@ const saveAuth=(userData,authToken)=>{
     setUser(userData);
     setToken(authToken);
     localStorage.setItem("foodiehubUser",JSON.stringify(userData));
-    localStorage.setItem("foodiehubToken",JSON.stringify(authToken));
+    localStorage.setItem("foodiehubToken",authToken);
 }
 
 const logout=()=>{

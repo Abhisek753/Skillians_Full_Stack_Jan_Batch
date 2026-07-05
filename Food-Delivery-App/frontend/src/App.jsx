@@ -6,6 +6,7 @@ import Signup from './pages/Signup'
 import Home from './pages/Home'
 import { ToastContainer } from 'react-toastify'
 import RestuarantDetails from './pages/RestuarantDetails'
+import RestuarantDashboard from './pages/RestuarantDashboard'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
            <Route path="/signup" element={<Signup/>}/>
            <Route path="/login" element={<Login/>}/>
            <Route path="/" element={<Home/>}/>
+           <Route path="/restuarant/dashboard" element={<RestuarantDashboard/>}/>
       </Routes>
     </main>
       <ToastContainer position="top-right" />

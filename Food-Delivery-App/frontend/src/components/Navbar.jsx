@@ -14,7 +14,7 @@ const Navbar = () => {
         <nav className='flex items-center gap-4 text-stone-700'>
           <Link to="/" className='hover:text-orange-600'>Home</Link>
           {user?.role=="restuarant" && (
-          <Link to="/restuarant/create">Create Restuarant</Link>
+          <Link to="/restuarant/dashboard">Dashboard</Link>
          ) }
          {user?(
           <>

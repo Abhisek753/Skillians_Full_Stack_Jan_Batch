@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
 import { getRestuarant } from '../services/restuarantapi';
 import RestuarantCard from '../components/RestuarantCard';
+import AuthContext from '../contexts/AuthContext';
 
 const Home = () => {
 const [restuarant,setRestuarant]=useState([]);
+ const {token}=useContext(AuthContext);
 
 useEffect(()=>{
    const fetchRestuarant=async ()=>{
 
     try{
-        const data= await getRestuarant("restuarant");
+        const data= await getRestuarant("restuarant",token);
         setRestuarant(data);
     }catch(err){
      console.log(err)

@@ -16,7 +16,15 @@ const getFoods=async(req,res)=>{
 }
 
 const getFoodById=async(req,res)=>{
-    
+   try{
+     const food=await Food.findById(req.params.id).populate("restuarantId","name address image description");
+     if(!food){
+      return res.status(404).json({message:"Food not found"});
+     }
+   }catch(err){
+     res.status(500).json({message:"Server error while fetching foods"})
+   }  
+
 }
 const createFood=async(req,res)=>{
     try{
@@ -49,10 +57,26 @@ const createFood=async(req,res)=>{
     }
 }
 const updateFood=async(req,res)=>{
-    
+     try{
+        const {name,price,image,description,restuarantId}=req.body;
+        const food=await Food.findByIdAndUpdate(req.params.id,{
+          name:name??req.food.name,
+          price:price??req.food.price,
+          image:image??req.food.image,
+          description:description??req.food.description
+        }).populate("restuarantId","name address image")
+     res.send({message:"Food updates successfully","food":food});
+     }catch(error){
+
+     }
 }
 const deleteFood=async(req,res)=>{
-    
+     try{
+       await Food.findByIdAndDelete(req.params.id);
+       res.send({messsage:"Food removed successfully"});
+     }catch(error){
+         res.status(500).json({message:"Server error while deleting food",error:error});
+     }
 }
 
 module.exports={

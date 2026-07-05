@@ -31,14 +31,49 @@ const getRestuarant=async (req,res)=>{
 const getRestuarantById=async (req,res)=>{
     try{
       const restuarant=await Restuarant.findById(req.params.id).populate("ownerId","name email");
-      res.json(restuarant)
+      res.json({"message":"Restuarant data",restuarant})
     }catch(err){
        res.status(500).json({message:"Server error while fetching restuarant"});
     }
 }
 
+const updateRestuarant=async(req,res)=>{
+  try{
+       const {name,address,image,description}=req.body;
+       const restuarant=await Restuarant.findByIdAndUpdate(req.params.id,{
+        name:name??req.restuarant.name,
+        address:address??req.restuarant.address,
+
+        image:image??req.restuarant.image,
+        description:description??req.restuarant.description
+       });
+       res.json(restuarant);
+  }catch(error){
+     res.status(500).json({message:"Server error while updating restuarant"});
+  }
+}
+
+
+
+const deleteRestuarant=async(req,res)=>{
+  try{
+    console.log("param",req.params.id);
+    await Restuarant.findByIdAndDelete(req.params.id);
+    res.json({message:"Restuarant removed successfully"});
+
+  }catch(error){
+       res.status(500).json({message:"Server error while deleting restuarant"});
+  }
+}
+
+
+
+
 module.exports={
     getRestuarant,
     createRestuarant,
-    getRestuarantById
+    getRestuarantById,
+    deleteRestuarant,
+    updateRestuarant
+
 }

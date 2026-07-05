@@ -1,6 +1,4 @@
-import React, { useContext } from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getRestuarant, getRestuarantById } from '../services/restuarantapi';
 import AuthContext from '../contexts/AuthContext';
@@ -14,21 +12,23 @@ const RestuarantDetails = () => {
     const [foods,setFoods]=useState(null);
     const {token}=useContext(AuthContext);
   
-   useEffect(()=>{
-   const fetchData=async()=>{
-        try{
-         
-            const restuarantData= await getRestuarantById(`restuarant/${id}`);
-            const foodData= await getFoods(`foods?restuarantId=${id}`);
-                 
-                  setRestuarant(restuarantData);
-                  setFoods(foodData);
-        }catch(err){
-             console.log(err);
-        }
-    }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if (!token) return;
+
+        const restuarantData = await getRestuarantById(`restuarant/${id}`, token);
+        const foodData = await getFoods(`foods?restuarantId=${id}`, token);
+
+        setRestuarant(restuarantData);
+        setFoods(foodData);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
     fetchData();
-   },[])
+  }, [id, token]);
 
 
   return (
@@ -42,14 +42,14 @@ const RestuarantDetails = () => {
                  <p>{restuarant?.description}</p>
             </div>
             <h2>Menu</h2>
-            {foods?.length>0==0?(
-                <p>No foods available</p>
-            ):( 
+            {foods?.length > 0 ? (
               <div className='grid gap-2 sm:grid-cols-2 md:grid-cols-3'>
-                {foods?.map((food)=>(
-                    <FoodCard key={food._id} food={food}/>
+                {foods?.map((food) => (
+                  <FoodCard key={food._id} food={food} />
                 ))}
               </div>
+            ) : (
+              <p>No foods available</p>
             )}
         
 

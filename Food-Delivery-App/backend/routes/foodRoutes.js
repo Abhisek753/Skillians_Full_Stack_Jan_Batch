@@ -3,12 +3,12 @@ const { getFoodById, getFoods, createFood, updateFood, deleteFood } = require(".
 const { protect } = require("../middleware/authMiddleware");
 const router=express.Router();
 
-router.get("/",protect,getFoods);
+router.get("/",getFoods);
 
 // get food by id
 router.get("/:id",protect,getFoodById);
 // create food
 router.post("/",protect,createFood);
-router.put("/:id",updateFood);
-router.delete("/:id",deleteFood);
+router.put("/:id",protect,updateFood);
+router.delete("/:id",protect,deleteFood);
 module.exports=router;

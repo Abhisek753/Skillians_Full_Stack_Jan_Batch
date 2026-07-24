@@ -6,7 +6,8 @@ import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import { ToastContainer } from "react-toastify";
 import RestuarantDetails from "./pages/RestuarantDetails";
-import RestuarantDashboard from "./pages/RestuarantDashboard"
+import RestuarantDashboard from "./pages/RestuarantDashboard";
+import RestuarantCreate from "./pages/RestuarantCreate";
 function App() {
   return (
     <>
@@ -24,6 +25,10 @@ function App() {
             <Route
               path="/restuarant/dashboard"
               element={<RestuarantDashboard/>}
+            />
+            <Route
+              path="/restuarant/create"
+              element={<RestuarantCreate />}
             />
           </Routes>
         </main>

@@ -14,7 +14,7 @@ const {saveAuth} =useContext(AuthContext);
   const handleSubmit=async (event)=>{
     event.preventDefault();
     try{
-      console.log("test")
+    
       const data=await login("auth/login",formData);
       saveAuth(data.user,data.token);
       toast.success("Login Successful");

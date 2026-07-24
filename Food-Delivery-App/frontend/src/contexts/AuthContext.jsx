@@ -1,44 +1,36 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
+const AuthContext = createContext(null);
 
-const AuthContext=createContext(null);
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem("foodiehubUser");
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
 
-export const AuthProvider=({children})=>{
-const [user,setUser]=useState(null);
-const [token,setToken]=useState(null);
+  const [token, setToken] = useState(() => {
+    return localStorage.getItem("foodiehubToken");
+  });
 
-useEffect(()=>{
-    const savedUser=localStorage.getItem("foodiehubUser");
-    const savedToken=localStorage.getItem("foodiehubToken");
-    if(savedUser&&savedToken){
-        setUser(JSON.parse(savedUser));
-        setToken(savedToken);
-    }
-},[])
-
-
-const saveAuth=(userData,authToken)=>{
+  const saveAuth = (userData, authToken) => {
     setUser(userData);
     setToken(authToken);
-    localStorage.setItem("foodiehubUser",JSON.stringify(userData));
-    localStorage.setItem("foodiehubToken",authToken);
-}
+    localStorage.setItem("foodiehubUser", JSON.stringify(userData));
+    localStorage.setItem("foodiehubToken", authToken);
+  };
 
-const logout=()=>{
+  const logout = () => {
     setUser(null);
     setToken(null);
     localStorage.removeItem("foodiehubUser");
     localStorage.removeItem("foodiehubToken");
+  };
 
-}
-
-return (
-<AuthContext.Provider value={{user,token,saveAuth,logout}} >
-     {children}
-</AuthContext.Provider>
-
-)
-
-}
+  return (
+    <AuthContext.Provider value={{ user, token, saveAuth, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
 
 export default AuthContext;

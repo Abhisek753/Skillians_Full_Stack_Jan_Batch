@@ -1,9 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import {  getRestuarantById } from '../services/restuarantapi';
-import AuthContext from '../contexts/AuthContext';
-import { getFoods } from '../services/foodsapi';
-import FoodCard from '../components/FoodCard';
+import { getRestuarantById } from '../services/restuarantapi';
+import { getFoods } from '../services/foodsapi';import FoodCard from '../components/FoodCard';
 
 
 const RestuarantDetails = () => {
@@ -15,8 +13,8 @@ const RestuarantDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const restuarantData = await getRestuarantById(`restuarant/${id}`);
-        const foodData = await getFoods(`foods?restuarantId=${id}`);
+        const restuarantData = await getRestuarantById(id);
+        const foodData = await getFoods(id);
 
         setRestuarant(restuarantData?.restuarant);
         setFoods(foodData);
@@ -26,7 +24,7 @@ const RestuarantDetails = () => {
     };
 
     fetchData();
-  }, []);
+  }, [id]);
 
   console.log(restuarant,"90909090");
   return (

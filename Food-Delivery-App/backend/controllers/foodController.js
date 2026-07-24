@@ -21,6 +21,7 @@ const getFoodById=async(req,res)=>{
      if(!food){
       return res.status(404).json({message:"Food not found"});
      }
+     res.json(food);
    }catch(err){
      res.status(500).json({message:"Server error while fetching foods"})
    }  
@@ -58,22 +59,38 @@ const createFood=async(req,res)=>{
 }
 const updateFood=async(req,res)=>{
      try{
-        const {name,price,image,description,restuarantId}=req.body;
-        const food=await Food.findByIdAndUpdate(req.params.id,{
-          name:name??req.food.name,
-          price:price??req.food.price,
-          image:image??req.food.image,
-          description:description??req.food.description
-        }).populate("restuarantId","name address image")
-     res.send({message:"Food updates successfully","food":food});
+        const food=await Food.findById(req.params.id);
+        if(!food){
+          return res.status(404).json({message:"Food not found"});
+        }
+        const restuarant=await Restuarant.findById(food.restuarantId);
+        if(!restuarant || restuarant.ownerId.toString()!==req.user._id.toString()){
+          return res.status(403).json({message:"Not authorized to update this food"});
+        }
+        const {name,price,image,description}=req.body;
+        const updatedFood=await Food.findByIdAndUpdate(req.params.id,{
+          name:name??food.name,
+          price:price??food.price,
+          image:image??food.image,
+          description:description??food.description
+        },{new:true}).populate("restuarantId","name address image");
+     res.json(updatedFood);
      }catch(error){
-
+        res.status(500).json({message:"Server error while updating food"});
      }
 }
 const deleteFood=async(req,res)=>{
      try{
+       const food=await Food.findById(req.params.id);
+       if(!food){
+         return res.status(404).json({message:"Food not found"});
+       }
+       const restuarant=await Restuarant.findById(food.restuarantId);
+       if(!restuarant || restuarant.ownerId.toString()!==req.user._id.toString()){
+         return res.status(403).json({message:"Not authorized to delete this food"});
+       }
        await Food.findByIdAndDelete(req.params.id);
-       res.send({messsage:"Food removed successfully"});
+       res.json({message:"Food removed successfully"});
      }catch(error){
          res.status(500).json({message:"Server error while deleting food",error:error});
      }

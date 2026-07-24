@@ -1,4 +1,5 @@
 const Restuarant=require("../models/Restuarant");
+const Food=require("../models/Food");
 
 const createRestuarant=async (req,res)=>{
     try{
@@ -31,7 +32,19 @@ const getRestuarant=async (req,res)=>{
 const getRestuarantById=async (req,res)=>{
     try{
       const restuarant=await Restuarant.findById(req.params.id).populate("ownerId","name email");
+      if(!restuarant){
+        return res.status(404).json({message:"Restuarant not found"});
+      }
       res.json({"message":"Restuarant data",restuarant})
+    }catch(err){
+       res.status(500).json({message:"Server error while fetching restuarant"});
+    }
+}
+
+const getMyRestuarants=async (req,res)=>{
+    try{
+      const restuarants=await Restuarant.find({ownerId:req.user._id}).populate("ownerId","name email");
+      res.json(restuarants);
     }catch(err){
        res.status(500).json({message:"Server error while fetching restuarant"});
     }
@@ -39,15 +52,21 @@ const getRestuarantById=async (req,res)=>{
 
 const updateRestuarant=async(req,res)=>{
   try{
+       const restuarant=await Restuarant.findById(req.params.id);
+       if(!restuarant){
+         return res.status(404).json({message:"Restuarant not found"});
+       }
+       if(restuarant.ownerId.toString()!==req.user._id.toString()){
+         return res.status(403).json({message:"Not authorized to update this restuarant"});
+       }
        const {name,address,image,description}=req.body;
-       const restuarant=await Restuarant.findByIdAndUpdate(req.params.id,{
-        name:name??req.restuarant.name,
-        address:address??req.restuarant.address,
-
-        image:image??req.restuarant.image,
-        description:description??req.restuarant.description
-       });
-       res.json(restuarant);
+       const updatedRestuarant=await Restuarant.findByIdAndUpdate(req.params.id,{
+        name:name??restuarant.name,
+        address:address??restuarant.address,
+        image:image??restuarant.image,
+        description:description??restuarant.description
+       },{new:true});
+       res.json(updatedRestuarant);
   }catch(error){
      res.status(500).json({message:"Server error while updating restuarant"});
   }
@@ -57,7 +76,14 @@ const updateRestuarant=async(req,res)=>{
 
 const deleteRestuarant=async(req,res)=>{
   try{
-    console.log("param",req.params.id);
+    const restuarant=await Restuarant.findById(req.params.id);
+    if(!restuarant){
+      return res.status(404).json({message:"Restuarant not found"});
+    }
+    if(restuarant.ownerId.toString()!==req.user._id.toString()){
+      return res.status(403).json({message:"Not authorized to delete this restuarant"});
+    }
+    await Food.deleteMany({restuarantId:req.params.id});
     await Restuarant.findByIdAndDelete(req.params.id);
     res.json({message:"Restuarant removed successfully"});
 
@@ -73,6 +99,7 @@ module.exports={
     getRestuarant,
     createRestuarant,
     getRestuarantById,
+    getMyRestuarants,
     deleteRestuarant,
     updateRestuarant
 

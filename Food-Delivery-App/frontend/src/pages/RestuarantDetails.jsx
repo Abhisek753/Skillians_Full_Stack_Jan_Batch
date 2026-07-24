@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { getRestuarant, getRestuarantById } from '../services/restuarantapi';
+import {  getRestuarantById } from '../services/restuarantapi';
 import AuthContext from '../contexts/AuthContext';
 import { getFoods } from '../services/foodsapi';
 import FoodCard from '../components/FoodCard';
@@ -10,17 +10,15 @@ const RestuarantDetails = () => {
     const {id}=useParams();
     const [restuarant,setRestuarant]=useState(null);
     const [foods,setFoods]=useState(null);
-    const {token}=useContext(AuthContext);
+
   
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if (!token) return;
+        const restuarantData = await getRestuarantById(`restuarant/${id}`);
+        const foodData = await getFoods(`foods?restuarantId=${id}`);
 
-        const restuarantData = await getRestuarantById(`restuarant/${id}`, token);
-        const foodData = await getFoods(`foods?restuarantId=${id}`, token);
-
-        setRestuarant(restuarantData);
+        setRestuarant(restuarantData?.restuarant);
         setFoods(foodData);
       } catch (err) {
         console.log(err);
@@ -28,9 +26,9 @@ const RestuarantDetails = () => {
     };
 
     fetchData();
-  }, [id, token]);
+  }, []);
 
-
+  console.log(restuarant,"90909090");
   return (
     <section>
         <Link to="/" className='mb-4 inline-block text-sm text-orange-600 '>Back to restuarant</Link>

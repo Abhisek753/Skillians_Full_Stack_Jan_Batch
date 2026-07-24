@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getMyRestuarants } from '../services/restuarantapi';
+import AuthContext from '../contexts/AuthContext';
 
 const RestuarantDashboard = () => {
-    const {token} = JSON.parse(localStorage.getItem('auth')) || {};
+    // const {token} = JSON.parse(localStorage.getItem('auth')) || {};
+       const {token}=useContext(AuthContext);
     const [restuarant, setRestuarant] = useState(null);
     const [selectedRestuarantId, setSelectedRestuarantId] = useState(null);
     const [foodByRestuarant, setFoodByRestuarant] = useState([]);
@@ -27,6 +29,7 @@ const RestuarantDashboard = () => {
         console.error("No token found");
         return;
        }
+       console.log("99999999999",token)
        const ownerRestaurants= await getMyRestuarants(token);
        setRestuarant(ownerRestaurants);
        if(ownerRestaurants.length==0){
@@ -38,6 +41,8 @@ const RestuarantDashboard = () => {
        const firstRestuarant= ownerRestaurants[0];
        
     };
+
+    
   return (
     <section className='space-y-6'>
         <div className='flex items-center justify-between'>

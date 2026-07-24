@@ -1,46 +1,54 @@
-import React, { useContext } from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react'
+import { useEffect, useState } from 'react';
 import { getRestuarant } from '../services/restuarantapi';
-import RestuarantCard from '../components/RestuarantCard';
-import AuthContext from '../contexts/AuthContext';
+import RestaurantCard from '../components/RestuarantCard';
 
-const Home = () => {
-const [restuarant,setRestuarant]=useState([]);
- const {token}=useContext(AuthContext);
 
-useEffect(()=>{
-   const fetchRestuarant=async ()=>{
+function Home() {
+  const [restaurants, setRestaurants] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
-    try{
-        const data= await getRestuarant("restuarant",token);
-        setRestuarant(data);
-    }catch(err){
-     console.log(err)
-    }
-   }
-   fetchRestuarant();
-},[])
+  useEffect(() => {
+    const fetchRestaurants = async () => {
+      try {
+        const data = await getRestuarant();
+        setRestaurants(data);
+      } catch (err) {
+        setError(err.response?.data?.message || 'Failed to load restaurants');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRestaurants();
+  }, []);
+
+  if (loading) {
+    return <p className="text-stone-600">Loading restaurants...</p>;
+  }
+
+  if (error) {
+    return <p className="text-red-600">{error}</p>;
+  }
 
   return (
-    <div>
-      <section>
-        <h1 className='mb-2 text-3xl font-bold'>Explore Restuarant</h1>
-        <p className='mb-8 text-stone-600'>Order food from the best place near you</p>
+    <section>
+      <h1 className="mb-2 text-3xl font-bold">Explore Restaurants</h1>
+      <p className="mb-8 text-stone-600">Order food from the best places near you</p>
 
-        {restuarant.length===0?(
-          <p>No restuarant yet. Restuarnat owner can add onece after login</p>
-        ):(
-          <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-             {restuarant.map((restuarant)=>(
-            <RestuarantCard key={restuarant._id} restuarant={restuarant}/>
-             ))}
-          </div>
-        )}
-      </section>
-
-    </div>
-  )
+      {restaurants.length === 0 ? (
+        <p className="rounded-lg bg-white p-8 text-center text-stone-600 shadow-md">
+          No restaurants yet. Restaurant owners can add one after login.
+        </p>
+      ) : (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {restaurants.map((restaurant) => (
+            <RestaurantCard key={restaurant._id} restaurant={restaurant} />
+          ))}
+        </div>
+      )}
+    </section>
+  );
 }
 
-export default Home
+export default Home;

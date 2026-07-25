@@ -28,7 +28,7 @@ const seedDatabase = async () => {
         role: 'restuarant'
       });
     }
-console.log("1111111");
+
     const restaurants = await Restuarant.insertMany([
       {
         name: 'Spice Kitchen',

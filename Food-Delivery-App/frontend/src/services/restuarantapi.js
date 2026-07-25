@@ -3,8 +3,8 @@ const URL = "http://localhost:5000/api";
 
 const getAuthHeaders = (authToken) => {
   // const token = authToken || localStorage.getItem("foodiehubToken");
-  if (!token) return {};
-  return { Authorization: `Bearer ${token}` };
+  if (!authToken) return {};
+  return { Authorization: `Bearer ${authToken}` };
 };
 
 export const getRestuarant = async (endpoint) => {
@@ -22,9 +22,17 @@ export const getRestuarantById = async (endpoint) => {
   return response.data;
 };
 
-export const getMyRestuarants = async (authToken = null) => {
+
+export const getMyRestuarants = async (authToken) => {
   const response = await axios.get(`${URL}/restuarant/my`, {
     headers: getAuthHeaders(authToken),
   });
   return response.data;
 };
+
+export const createRestuarant=async (restaurantData,authToken)=>{
+   const response= await axios.post(`${URL}/restuarant`,restaurantData,{
+    headers:getAuthHeaders(authToken),
+   });
+   return response.data;
+}

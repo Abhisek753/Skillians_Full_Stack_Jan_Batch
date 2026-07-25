@@ -36,6 +36,16 @@ const getRestuarantById=async (req,res)=>{
        res.status(500).json({message:"Server error while fetching restuarant"});
     }
 }
+const getMyRestuarants=async(req,res)=>{
+   try{
+   
+      const restuarant=await Restuarant.find({ownerId:req.user._id}).populate("ownerId","name email");
+      res.json({"message":"Restuarant data",restuarant})
+    }catch(err){
+       res.status(500).json({message:"Server error while fetching restuarant"});
+    
+      }
+}
 
 const updateRestuarant=async(req,res)=>{
   try{
@@ -74,6 +84,6 @@ module.exports={
     createRestuarant,
     getRestuarantById,
     deleteRestuarant,
-    updateRestuarant
-
+    updateRestuarant,
+    getMyRestuarants
 }

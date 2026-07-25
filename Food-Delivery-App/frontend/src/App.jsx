@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import { ToastContainer } from "react-toastify";
 import RestuarantDetails from "./pages/RestuarantDetails";
 import RestuarantDashboard from "./pages/RestuarantDashboard"
+import RestuarantCreate from "./pages/RestuarantCreate";
 function App() {
   return (
     <>
@@ -20,7 +21,7 @@ function App() {
             <Route path="/restaurants/:id" element={<RestuarantDetails />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
-
+            <Route path="/restuarant/create" element={<RestuarantCreate />} />
             <Route
               path="/restuarant/dashboard"
               element={<RestuarantDashboard/>}
